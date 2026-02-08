@@ -88,7 +88,7 @@ export default function Success() {
               </div>
             </div>
 
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
+            {/* <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
               <h3 className="font-semibold text-yellow-800 mb-2">
                 📧 What's Next?
               </h3>
@@ -101,7 +101,7 @@ export default function Success() {
                 <br />
                 4. Carry your ticket (print or digital) and college ID card
               </p>
-            </div>
+            </div> */}
 
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8">
               <h3 className="font-semibold text-blue-800 mb-2">
@@ -126,7 +126,7 @@ export default function Success() {
                 Back to Home
               </Link>
               <p className="text-gray-500 text-sm">
-                Need help? Check your email for ticket or contact the organizers
+                Need help? Check contact the organizers
               </p>
             </div>
           </div>

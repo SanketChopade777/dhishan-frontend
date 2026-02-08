@@ -174,9 +174,9 @@ export default function Home() {
 
                 {/* Contact Info */}
                 <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
-                  <p className="text-xs sm:text-sm text-gray-400 text-center">
+                  {/* <p className="text-xs sm:text-sm text-gray-400 text-center">
                     📅 Schedule will be shared via email
-                  </p>
+                  </p> */}
                   <p className="text-center text-white font-semibold mt-1 sm:mt-2 text-sm sm:text-base">
                     Contact: Kiran Barkade (+91 836 998 5931)
                   </p>
