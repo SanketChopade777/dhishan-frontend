@@ -113,7 +113,7 @@ export default function Home() {
                           Total Seats
                         </p>
                         <p className="text-lg sm:text-xl font-bold text-white">
-                          1,500
+                          1,000
                         </p>
                       </div>
                     </div>
