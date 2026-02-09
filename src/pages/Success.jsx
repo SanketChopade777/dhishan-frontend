@@ -12,6 +12,10 @@ export default function Success() {
     }
   }, []);
 
+  const handlePrint = () => {
+    window.print();
+  };
+
   if (!registration) {
     return (
       <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center">
@@ -88,21 +92,6 @@ export default function Success() {
               </div>
             </div>
 
-            {/* <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
-              <h3 className="font-semibold text-yellow-800 mb-2">
-                📧 What's Next?
-              </h3>
-              <p className="text-yellow-700">
-                1. Your ticket PDF has been sent to your email (
-                {registration.email})<br />
-                2. Please check your spam folder if you don't see it
-                <br />
-                3. Schedule will be emailed
-                <br />
-                4. Carry your ticket (print or digital) and college ID card
-              </p>
-            </div> */}
-
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8">
               <h3 className="font-semibold text-blue-800 mb-2">
                 📍 Event Details
@@ -118,15 +107,26 @@ export default function Success() {
               </p>
             </div>
 
-            <div className="text-center space-y-4">
-              <Link
-                to="/"
-                className="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
-              >
-                Back to Home
-              </Link>
+            {/* ACTION BUTTONS */}
+            <div className="text-center space-y-4 print:hidden">
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link
+                  to="/register"
+                  className="bg-gray-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-700 transition"
+                >
+                  Back to Registration
+                </Link>
+
+                <button
+                  onClick={handlePrint}
+                  className="bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition"
+                >
+                  Print Ticket
+                </button>
+              </div>
+
               <p className="text-gray-500 text-sm">
-                Need help? Check contact the organizers
+                Please print or save this page for entry
               </p>
             </div>
           </div>
