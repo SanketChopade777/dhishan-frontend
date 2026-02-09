@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  CheckCircleIcon,
-  PrinterIcon,
-  HomeIcon,
-} from "@heroicons/react/24/solid";
+import { CheckCircleIcon, PrinterIcon, HomeIcon } from "@heroicons/react/24/solid";
 
 export default function Success() {
   const [registration, setRegistration] = useState(null);
@@ -39,389 +35,261 @@ export default function Success() {
   }
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] py-8 bg-gradient-to-b from-blue-50 to-gray-100">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Ticket Card */}
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200 print:shadow-none print:rounded-none print:border-2">
-          {/* Header with Logo */}
-          <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 p-6 sm:p-8 text-center">
-            {/* Logo */}
-            <div className="absolute top-4 left-6 print:block hidden print:left-4">
-              <div className="flex items-center">
-                <img
-                  src="/logo.jpg"
-                  alt="Dhishan Logo"
-                  className="h-12 w-12 object-cover rounded-lg border-2 border-white"
-                />
-                <div className="ml-3 text-left">
-                  <h2 className="text-white font-bold text-lg leading-tight">
-                    DHISHAN
-                  </h2>
-                  <p className="text-blue-200 text-sm">'26</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-4 print:hidden">
-              <img
-                src="/logo.jpg"
-                alt="Dhishan Logo"
-                className="h-24 w-24 mx-auto object-cover rounded-xl border-4 border-white shadow-lg"
+    <div className="min-h-[calc(100vh-4rem)] py-4 bg-gray-50">
+      {/* COMPACT TICKET DESIGN - FITS ON ONE PAGE */}
+      <div className="max-w-3xl mx-auto px-3 sm:px-4">
+        <div className="bg-white rounded-xl shadow-lg border border-gray-200 print:shadow-none print:border print:rounded-none">
+          
+          {/* HEADER - COMPACT */}
+          <div className="bg-gradient-to-r from-blue-700 to-blue-800 p-4 sm:p-5 text-center relative print:bg-blue-800 print:text-black">
+            {/* Logo - Small and positioned left */}
+            <div className="absolute left-3 top-3 flex items-center print:block">
+              <img 
+                src="/logo.jpg" 
+                alt="Dhishan Logo" 
+                className="h-10 w-10 object-cover rounded-md border border-white print:h-8 print:w-8"
               />
             </div>
-
-            <div className="print:pt-6">
-              <CheckCircleIcon className="h-16 w-16 text-green-300 mx-auto mb-3 print:h-12 print:w-12" />
-              <h1 className="text-3xl sm:text-4xl font-bold text-white print:text-3xl">
-                Registration Successful! 🎉
-              </h1>
-              <p className="text-blue-100 mt-2 text-lg print:text-base">
-                Official Entry Ticket Confirmed
-              </p>
-            </div>
+            
+            <CheckCircleIcon className="h-10 w-10 text-green-300 mx-auto mb-2 print:h-8 print:w-8" />
+            <h1 className="text-xl sm:text-2xl font-bold text-white print:text-white">
+              Registration Successful
+            </h1>
+            <p className="text-blue-100 text-sm mt-1 print:text-blue-100">
+              Official Entry Ticket - Dhishan'26
+            </p>
           </div>
 
-          {/* Ticket Content */}
-          <div className="p-6 sm:p-8">
-            {/* Ticket Number - Highlighted */}
-            <div className="text-center mb-8">
-              <div className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-2xl shadow-lg print:px-6 print:py-3">
-                <div className="text-sm font-medium opacity-90 print:text-xs">
-                  TICKET NUMBER
-                </div>
-                <div className="text-4xl font-bold tracking-wider mt-2 print:text-3xl print:mt-1">
+          {/* CONTENT - COMPACT LAYOUT */}
+          <div className="p-4 sm:p-5 space-y-4 print:p-4">
+            
+            {/* TICKET NUMBER - PROMINENT */}
+            <div className="text-center">
+              <div className="inline-block bg-gradient-to-r from-green-600 to-green-700 text-white px-5 py-3 rounded-lg shadow print:px-4 print:py-2">
+                <div className="text-xs font-medium opacity-90 print:text-xs">TICKET NO</div>
+                <div className="text-2xl font-bold tracking-tight mt-1 print:text-xl">
                   {registration.ticketNumber}
                 </div>
               </div>
-              <p className="text-gray-500 text-sm mt-3 print:text-xs">
-                Show this number at entry gate
-              </p>
             </div>
 
-            {/* Registration Details in Single Column for Print */}
-            <div className="space-y-6 print:space-y-4">
-              {/* Student Info Card */}
-              <div className="border-2 border-blue-100 rounded-xl p-6 bg-gradient-to-r from-blue-50 to-white print:p-4">
-                <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center print:text-lg">
-                  <span className="mr-2">👤</span> Student Information
+            {/* COMPACT DETAILS GRID */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 print:grid-cols-2 print:gap-2">
+              {/* STUDENT INFO */}
+              <div className="border border-blue-100 rounded-lg p-3 bg-blue-50 print:p-2">
+                <h3 className="font-bold text-blue-800 text-sm mb-2 flex items-center print:text-xs">
+                  <span className="mr-1">👤</span> Student Details
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 print:grid-cols-2">
-                  <div>
-                    <p className="text-sm text-gray-500 print:text-xs">
-                      Full Name
-                    </p>
-                    <p className="font-bold text-lg print:text-base">
-                      {registration.studentName}
-                    </p>
+                <div className="space-y-1 text-sm print:text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Name:</span>
+                    <span className="font-semibold">{registration.studentName}</span>
                   </div>
-                  <div>
-                    <p className="text-sm text-gray-500 print:text-xs">
-                      Roll Number
-                    </p>
-                    <p className="font-bold text-lg print:text-base">
-                      {registration.rollNo}
-                    </p>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Roll No:</span>
+                    <span className="font-semibold">{registration.rollNo}</span>
                   </div>
-                  <div>
-                    <p className="text-sm text-gray-500 print:text-xs">
-                      Branch
-                    </p>
-                    <p className="font-bold text-lg print:text-base">
-                      {registration.branch}
-                    </p>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Branch:</span>
+                    <span className="font-semibold">{registration.branch}</span>
                   </div>
-                  <div>
-                    <p className="text-sm text-gray-500 print:text-xs">Year</p>
-                    <p className="font-bold text-lg print:text-base">
-                      {registration.year}
-                    </p>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Year:</span>
+                    <span className="font-semibold">{registration.year}</span>
                   </div>
                 </div>
               </div>
 
-              {/* Contact Info Card */}
-              <div className="border-2 border-green-100 rounded-xl p-6 bg-gradient-to-r from-green-50 to-white print:p-4">
-                <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center print:text-lg">
-                  <span className="mr-2">📞</span> Contact Details
+              {/* CONTACT INFO */}
+              <div className="border border-green-100 rounded-lg p-3 bg-green-50 print:p-2">
+                <h3 className="font-bold text-green-800 text-sm mb-2 flex items-center print:text-xs">
+                  <span className="mr-1">📞</span> Contact Details
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 print:grid-cols-2">
-                  <div>
-                    <p className="text-sm text-gray-500 print:text-xs">
-                      Email Address
-                    </p>
-                    <p className="font-semibold text-gray-800 break-words print:text-sm">
-                      {registration.email}
-                    </p>
+                <div className="space-y-1 text-sm print:text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Email:</span>
+                    <span className="font-semibold truncate">{registration.email}</span>
                   </div>
-                  <div>
-                    <p className="text-sm text-gray-500 print:text-xs">
-                      Mobile Number
-                    </p>
-                    <p className="font-semibold text-gray-800 print:text-base">
-                      +91 {registration.mobile}
-                    </p>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Mobile:</span>
+                    <span className="font-semibold">+91 {registration.mobile}</span>
                   </div>
-                  <div className="md:col-span-2">
-                    <p className="text-sm text-gray-500 print:text-xs">
-                      Registration Time
-                    </p>
-                    <p className="font-semibold text-gray-800 print:text-sm">
-                      {new Date(registration.registrationTime).toLocaleString(
-                        "en-IN",
-                        {
-                          weekday: "long",
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        },
-                      )}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Event Details Card */}
-              <div className="border-2 border-purple-100 rounded-xl p-6 bg-gradient-to-r from-purple-50 to-white print:p-4">
-                <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center print:text-lg">
-                  <span className="mr-2">📅</span> Event Details
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 print:grid-cols-3">
-                  <div className="text-center p-4 bg-white rounded-lg border border-purple-200 print:p-3">
-                    <div className="text-2xl text-purple-600 mb-2 print:text-xl">
-                      📅
-                    </div>
-                    <p className="font-bold text-gray-800">15th Feb 2026</p>
-                    <p className="text-sm text-gray-600 print:text-xs">
-                      Saturday
-                    </p>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-lg border border-purple-200 print:p-3">
-                    <div className="text-2xl text-purple-600 mb-2 print:text-xl">
-                      ⏰
-                    </div>
-                    <p className="font-bold text-gray-800">10:00 AM</p>
-                    <p className="text-sm text-gray-600 print:text-xs">
-                      to 08:00 PM
-                    </p>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-lg border border-purple-200 print:p-3">
-                    <div className="text-2xl text-purple-600 mb-2 print:text-xl">
-                      📍
-                    </div>
-                    <p className="font-bold text-gray-800">Open Theatre</p>
-                    <p className="text-sm text-gray-600 print:text-xs">
-                      GCEK, Karad
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Important Instructions */}
-              <div className="border-2 border-red-100 rounded-xl p-6 bg-gradient-to-r from-red-50 to-white print:p-4 print:break-inside-avoid">
-                <h3 className="text-xl font-bold text-red-800 mb-4 flex items-center print:text-lg">
-                  <span className="mr-2">⚠️</span> Important Instructions
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-start">
-                    <div className="bg-red-100 p-2 rounded-lg mr-3 flex-shrink-0">
-                      <span className="text-red-600 font-bold">1</span>
-                    </div>
-                    <p className="text-red-700">
-                      <strong>Carry College ID Card</strong> - Mandatory for
-                      verification
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="bg-red-100 p-2 rounded-lg mr-3 flex-shrink-0">
-                      <span className="text-red-600 font-bold">2</span>
-                    </div>
-                    <p className="text-red-700">
-                      <strong>Show This Ticket</strong> - Present at entry gate
-                      (Print or Digital)
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="bg-red-100 p-2 rounded-lg mr-3 flex-shrink-0">
-                      <span className="text-red-600 font-bold">3</span>
-                    </div>
-                    <p className="text-red-700">
-                      <strong>Free Refreshments</strong> - Available for
-                      registered students
-                    </p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="bg-red-100 p-2 rounded-lg mr-3 flex-shrink-0">
-                      <span className="text-red-600 font-bold">4</span>
-                    </div>
-                    <p className="text-red-700">
-                      <strong>Contact</strong> - Kiran Barkade (+91 836 998
-                      5931)
-                    </p>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Registered:</span>
+                    <span className="font-semibold text-xs">
+                      {new Date(registration.registrationTime).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Print Watermark */}
-            <div className="hidden print:block mt-8 pt-6 border-t border-gray-300">
-              <div className="text-center text-gray-500 text-sm">
-                <p>Official Entry Ticket - Dhishan'26</p>
-                <p className="mt-1">Government College of Engineering, Karad</p>
-                <p className="mt-1">
-                  Generated on: {new Date().toLocaleDateString("en-IN")}
-                </p>
+            {/* EVENT DETAILS - COMPACT */}
+            <div className="border border-purple-100 rounded-lg p-3 bg-purple-50 print:p-2">
+              <h3 className="font-bold text-purple-800 text-sm mb-2 flex items-center print:text-xs">
+                <span className="mr-1">📅</span> Event Information
+              </h3>
+              <div className="grid grid-cols-3 gap-2 print:grid-cols-3 print:gap-1">
+                <div className="text-center p-2 bg-white rounded border border-purple-200 print:p-1">
+                  <div className="text-lg text-purple-600 mb-1 print:text-base">📅</div>
+                  <p className="font-bold text-gray-800 text-xs print:text-xs">15 Feb 2026</p>
+                </div>
+                <div className="text-center p-2 bg-white rounded border border-purple-200 print:p-1">
+                  <div className="text-lg text-purple-600 mb-1 print:text-base">⏰</div>
+                  <p className="font-bold text-gray-800 text-xs print:text-xs">10AM-8PM</p>
+                </div>
+                <div className="text-center p-2 bg-white rounded border border-purple-200 print:p-1">
+                  <div className="text-lg text-purple-600 mb-1 print:text-base">📍</div>
+                  <p className="font-bold text-gray-800 text-xs print:text-xs">Open Theatre</p>
+                </div>
               </div>
             </div>
 
-            {/* Action Buttons - Hidden when printing */}
-            <div className="mt-8 text-center space-y-6 print:hidden">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* INSTRUCTIONS - COMPACT */}
+            <div className="border border-red-100 rounded-lg p-3 bg-red-50 print:p-2 print:break-inside-avoid">
+              <h3 className="font-bold text-red-800 text-sm mb-2 flex items-center print:text-xs">
+                <span className="mr-1">⚠️</span> Important Instructions
+              </h3>
+              <ul className="space-y-1 text-sm print:text-xs">
+                <li className="flex items-start">
+                  <span className="text-red-600 mr-1">•</span>
+                  <span className="text-red-700">Carry College ID Card</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-600 mr-1">•</span>
+                  <span className="text-red-700">Show this ticket at entry</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-600 mr-1">•</span>
+                  <span className="text-red-700">Free refreshments provided</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-600 mr-1">•</span>
+                  <span className="text-red-700">Contact: +91 836 998 5931</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* PRINT WATERMARK */}
+            <div className="hidden print:block mt-3 pt-2 border-t border-gray-300">
+              <div className="text-center text-gray-500 text-xs">
+                <p>Government College of Engineering, Karad</p>
+                <p className="mt-0.5">Generated: {new Date().toLocaleDateString('en-IN')}</p>
+              </div>
+            </div>
+
+            {/* ACTION BUTTONS - HIDDEN WHEN PRINTING */}
+            <div className="print:hidden mt-4">
+              <div className="flex flex-col sm:flex-row gap-2 justify-center">
                 <Link
                   to="/"
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition duration-300 shadow-lg"
+                  className="inline-flex items-center justify-center bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition"
                 >
-                  <HomeIcon className="h-5 w-5 mr-2" />
+                  <HomeIcon className="h-4 w-4 mr-1" />
                   Back to Home
                 </Link>
-
+                
                 <button
                   onClick={handlePrint}
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold py-3 px-6 rounded-xl hover:from-green-700 hover:to-green-800 transition duration-300 shadow-lg"
+                  className="inline-flex items-center justify-center bg-green-600 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-green-700 transition"
                 >
-                  <PrinterIcon className="h-5 w-5 mr-2" />
+                  <PrinterIcon className="h-4 w-4 mr-1" />
                   Print Ticket
                 </button>
-
-                <Link
-                  to="/register"
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-gray-600 to-gray-700 text-white font-semibold py-3 px-6 rounded-xl hover:from-gray-700 hover:to-gray-800 transition duration-300 shadow-lg"
-                >
-                  Register Another
-                </Link>
               </div>
-
-              <p className="text-gray-500 text-sm">
-                💡 Tip: For best print results, use "Save as PDF" in print
-                dialog
+              <p className="text-center text-gray-500 text-xs mt-2">
+                Print this page for entry. Use "Save as PDF" option.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Print Styles */}
-      <style jsx>{`
+      {/* PRINT STYLES */}
+      <style>{`
         @media print {
           /* Hide unnecessary elements */
-          .print\\:hidden {
-            display: none !important;
+          body * {
+            visibility: hidden;
           }
-
-          /* Show print-only elements */
-          .print\\:block {
-            display: block !important;
+          
+          /* Show only ticket */
+          .bg-white, .bg-white * {
+            visibility: visible;
           }
-
-          /* Prevent page breaks inside important sections */
-          .print\\:break-inside-avoid {
-            break-inside: avoid !important;
-          }
-
-          /* Print styling */
+          
+          /* Reset page */
           body {
             background: white !important;
-            color: black !important;
-            font-size: 12pt !important;
-          }
-
-          /* Ensure ticket fits on one page */
-          .max-w-4xl {
-            max-width: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
           }
-
-          /* Remove shadows and backgrounds for printing */
-          .shadow-2xl,
-          .shadow-lg {
+          
+          /* Ticket styling */
+          .bg-white {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0.5cm !important;
             box-shadow: none !important;
+            border-radius: 0 !important;
           }
-
-          .bg-gradient-to-r {
-            background: #e5e7eb !important;
+          
+          /* Remove backgrounds for print */
+          .bg-blue-50, .bg-green-50, .bg-purple-50, .bg-red-50 {
+            background-color: #f9fafb !important;
           }
-
-          /* Keep borders visible */
-          .border {
-            border-color: #ccc !important;
+          
+          .from-blue-700 {
+            background-color: #1e40af !important;
           }
-
-          /* Reduce padding for print */
-          .p-8,
-          .p-6 {
-            padding: 16px !important;
+          
+          .from-green-600 {
+            background-color: #059669 !important;
+            border: 1px solid #047857 !important;
           }
-
-          .rounded-3xl,
-          .rounded-xl,
-          .rounded-lg {
-            border-radius: 4px !important;
-          }
-
-          /* Ensure colors are readable */
+          
+          /* Ensure text is black */
           .text-white {
-            color: black !important;
-          }
-
-          .bg-blue-600 {
-            background: #dbeafe !important;
-          }
-
-          /* Ticket number stands out */
-          .from-green-500 {
-            background: #10b981 !important;
             color: white !important;
-            border: 2px solid #059669 !important;
           }
-
+          
+          /* Compact layout */
+          .space-y-4 > * + * {
+            margin-top: 8px !important;
+          }
+          
+          /* Font sizes */
+          .text-xl { font-size: 18px !important; }
+          .text-lg { font-size: 16px !important; }
+          .text-sm { font-size: 12px !important; }
+          .text-xs { font-size: 10px !important; }
+          
+          /* Padding */
+          .p-4 { padding: 12px !important; }
+          .p-3 { padding: 8px !important; }
+          .p-2 { padding: 6px !important; }
+          
           /* Page setup */
           @page {
             margin: 0.5cm;
             size: A4 portrait;
           }
-        }
-      `}</style>
-
-      {/* Alternative CSS approach */}
-      <style>{`
-        @media print {
-          body * {
-            visibility: hidden;
-          }
-          #printable-ticket, #printable-ticket * {
-            visibility: visible;
-          }
-          #printable-ticket {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-          }
-          .no-print {
-            display: none !important;
+          
+          /* Prevent breaking */
+          .print\\:break-inside-avoid {
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
           }
         }
         
-        /* Ensure single page print */
-        @media print {
-          .print-container {
-            page-break-inside: avoid;
-            break-inside: avoid;
-          }
-          .avoid-break {
-            page-break-inside: avoid;
+        /* Web-only styles */
+        @media screen {
+          .bg-white {
+            max-height: calc(100vh - 5rem);
+            overflow-y: auto;
           }
         }
       `}</style>
