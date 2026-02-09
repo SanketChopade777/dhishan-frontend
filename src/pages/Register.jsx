@@ -9,7 +9,7 @@ export default function Register() {
             Register for <span className="text-yellow-400">DHISHAN'26</span>
           </h1>
           <p className="text-gray-300 text-lg">
-            Fill in your details to secure your spot. Only 1500 seats available!
+            Fill in your details to secure your spot. Only 1000 seats available!
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function Register() {
                     <li>✓ Free for all GCEK students</li>
                     <li>✓ Strictly for GCEK only</li>
                     <li>✓ First-come, first-served</li>
-                    <li>✓ Only 1500 seats</li>
+                    <li>✓ Only 1000 seats</li>
                     <li>✓ Free refreshments</li>
                     {/* <li>✓ Schedule on 14th Feb via email</li> */}
                   </ul>

@@ -74,7 +74,7 @@ export default function AdminDashboard() {
           <p className="text-3xl font-bold text-blue-600 mt-2">
             {dashboardData?.totalRegistrations || 0}
           </p>
-          <p className="text-sm text-gray-500 mt-1">out of 1500 seats</p>
+          <p className="text-sm text-gray-500 mt-1">out of 1000 seats</p>
         </div>
 
         <div className="bg-white rounded-lg shadow p-6">

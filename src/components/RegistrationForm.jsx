@@ -170,7 +170,7 @@ export default function RegistrationForm() {
           <div className="ml-3">
             <p className="text-sm text-yellow-700">
               <strong>Important:</strong> Only GCEK students are allowed.
-              Registration is free. Only 1500 seats available.
+              Registration is free. Only 1000 seats available.
             </p>
           </div>
         </div>
