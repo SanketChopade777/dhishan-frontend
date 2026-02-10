@@ -8,6 +8,8 @@ const branches = [
   { value: "Ele", label: "Electrical Engineering" },
   { value: "ENTC", label: "Electronics & Telecommunication" },
   { value: "Civil", label: "Civil Engineering" },
+  { value: "M.tech", label: "M.tech" },
+  { value: "MCA", label: "MCA" },
 ];
 
 const years = [
