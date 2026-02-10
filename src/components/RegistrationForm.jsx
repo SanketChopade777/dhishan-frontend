@@ -5,10 +5,10 @@ import { registerForEvent } from "../services/api";
 const branches = [
   { value: "IT", label: "Information Technology" },
   { value: "MECH", label: "Mechanical Engineering" },
-  { value: "Ele", label: "Electrical Engineering" },
+  { value: "ELE", label: "Electrical Engineering" },
   { value: "ENTC", label: "Electronics & Telecommunication" },
-  { value: "Civil", label: "Civil Engineering" },
-  { value: "M.tech", label: "M.tech" },
+  { value: "CIVIL", label: "Civil Engineering" },
+  { value: "M.TECH", label: "M.tech" },
   { value: "MCA", label: "MCA" },
 ];
 
