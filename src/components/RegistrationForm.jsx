@@ -179,11 +179,13 @@ export default function RegistrationForm() {
       </div>
 
       <button
+        onClick={disabled}
         type="submit"
         disabled={loading}
         className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition duration-300"
       >
-        {loading ? "Registering..." : "Register Now (Free)"}
+        {/* {loading ? "Registering..." : "Register Now (Free)"} */}
+        {loading ? "Registering..." : "Registration Closed!"}
       </button>
     </form>
   );

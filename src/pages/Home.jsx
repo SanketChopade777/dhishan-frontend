@@ -81,10 +81,10 @@ export default function Home() {
                 </div>
 
                 <Link
-                  to="/register"
+                  // to="/register"
                   className="group inline-flex items-center justify-center bg-gradient-to-r from-yellow-500 to-orange-600 text-white font-bold py-3 px-6 rounded-lg text-base hover:from-yellow-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-yellow-500/25 w-full sm:w-auto"
                 >
-                  <span>Register Now - Free</span>
+                  <span>Registration Closed!</span>
                   <ArrowRightIcon className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>
